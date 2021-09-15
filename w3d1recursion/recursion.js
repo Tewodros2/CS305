@@ -47,17 +47,14 @@ function outputListLoop(list, result = "") {
         result += list.value + " ";
         list = list.next;
     }
-    return result;
+    return result + "printed to console";
 }
-
-
-function outputList(list, result = "") {
-    if (list === null) {
-        return result;
-    } else {
-        result += list.value + " ";
-        return outputList(list.next, result);
+function outputList(list, result = []) {
+    if (list !== null) {
+        result.push(list.value);
+        outputList(list.next, result);
     }
+    return result.join(" ") + " printed to console";
 }
 
 
@@ -73,13 +70,12 @@ function reverseListLoop(list) {
     for (let i = result.length - 1; i >= 0; i--) {
         reverse += result[i] + " ";
     }
-    return reverse;
+    return reverse + "printed to console";
 }
 function reverseList(list, result = []) {
     if (list !== null) {
-        result += list.value;
+        result.unshift(list.value);
         reverseList(list.next, result);
     }
-    return result
-
+    return result.join(" ") + " printed to console";
 }
