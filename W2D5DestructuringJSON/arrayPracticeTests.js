@@ -14,7 +14,7 @@ const findMax = myExports.findMax;
 const findMaxAge = myExports.findMaxAge;
 const findAverage = myExports.findAverage;
 const filterEvenAgeAverage = myExports.filterEvenAgeAverage;
-const filterOddAgeAverage = myExports.filterOddAgeAverage
+const filterMaxAgeAverage = myExports.filterMaxAgeAverage
 const findSum = myExports.findSum
 
 
@@ -79,11 +79,11 @@ describe("filter practice", function () {
         assert.strictEqual(numArray.includes(15), false);
     });
     it("find sum of array using reduce", function () {
-        assert.deepEqual(findSum([3, 5, 1, 6, 5]), 20);
+        assert.deepEqual(findSum([5, 6, 5]), 16);
     });
 
     it("find average of the array using reduce method", function () {
-        assert.deepEqual(findAverage([3, 5, 1, 6, 5]), 4);
+        assert.deepEqual(findAverage([1, 3, 5]), 3);
     });
     it("find maximum of the array using reduce method", function () {
         assert.deepEqual(findMax(numArray), 300);
@@ -95,8 +95,8 @@ describe("filter practice", function () {
         assert.deepEqual(filterEvenAgeAverage(peopleArray), 43);
     });
     it(" find odd age averages using map reduce filter chaining method", function () {
-        assert.deepEqual(filterOddAgeAverage(peopleArray), 14);
+        assert.deepEqual(filterMaxAgeAverage(peopleArray), 14);
     });
 
-
 });
+
